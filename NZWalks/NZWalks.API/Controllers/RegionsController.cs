@@ -23,6 +23,7 @@ namespace NZWalks.API.Controllers
         public async Task<IActionResult> GetAllRegionsAsync()
         {
             var regions = await regionRepository.GetAllAsync();
+            // returns domin objects, map to DTO to retutn the list to users 
 
             // return DTO regions                                   // manual code - without mapper
             //var regionsDTO = new List<Models.DTO.Region>();
@@ -69,7 +70,7 @@ namespace NZWalks.API.Controllers
             // pass in DTO -> convert to domain model -> save to DB with .AddAsync -> convert domain model back to DTO
             
             
-            // request (DTO) to domain model
+            // convert request (DTO) to domain model
             var region = new Models.Domain.Region()
             {
                 Code = addRegionRequest.Code,
