@@ -70,10 +70,10 @@ namespace NZWalks.API.Controllers
             // pass in DTO -> convert to domain model -> save to DB with .AddAsync -> convert domain model back to DTO
 
             // validiate the request:
-            if (!ValidateAddRegionAsync(addRegionRequest))
-            { 
-                return BadRequest(ModelState);
-            }
+            //if (!ValidateAddRegionAsync(addRegionRequest))
+            //{ 
+            //    return BadRequest(ModelState);
+            //}
 
             // convert request (DTO) to domain model
             var region = new Models.Domain.Region()
@@ -143,11 +143,11 @@ namespace NZWalks.API.Controllers
         [Route("{id:guid}")]
         public async Task<IActionResult> UpdateRegionAsync([FromRoute] Guid id, [FromBody]Models.DTO.UpdateRegionRequest updateRegionRequest)
         {
-            // validate DTO
-            if (!ValidateUpdateRegionAsync(updateRegionRequest))
-            { 
-                return BadRequest(ModelState);
-            }
+            //// validate DTO
+            //if (!ValidateUpdateRegionAsync(updateRegionRequest))
+            //{ 
+            //    return BadRequest(ModelState);
+            //}
 
             // Convert DTO to domian model
 
